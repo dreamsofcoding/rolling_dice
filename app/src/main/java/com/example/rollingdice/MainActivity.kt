@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -111,8 +112,49 @@ fun DiceRollValueLabel(value: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun RollingScreenPreview() {
     RollingDiceTheme {
-        DiceRollValueLabel("Android")
+        RollingScreen(padding = PaddingValues(0.dp))
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DiceRollValueLabelPreview() {
+    RollingDiceTheme {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            DiceRollValueLabel("6")
+        }
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun RollButtonPreview() {
+    RollingDiceTheme {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            RollButton(onRoll = {})
+        }
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun DiceImagePreview() {
+    RollingDiceTheme {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            DiceImage(diceValue = 3)
+        }
     }
 }
